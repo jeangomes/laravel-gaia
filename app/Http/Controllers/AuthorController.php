@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        return Author::all();
     }
 
     /**
@@ -25,7 +25,12 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author = new Author;
+        $author->name = $request->name;
+        $author->gender = $request->gender;
+        $author->nationality = $request->nationality;
+        $author->save();
+        return $author;
     }
 
     /**

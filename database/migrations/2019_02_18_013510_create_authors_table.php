@@ -17,7 +17,7 @@ class CreateAuthorsTable extends Migration
             $table->increments('id');
             $table->string('name',45);
             $table->char('gender',1);
-            $table->string('nationality',45);
+            $table->string('nationality',45)->default('-');
             $table->timestamps();
         });
     }
