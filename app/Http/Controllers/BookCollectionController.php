@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
+use App\Models\BookCollection;
 use Illuminate\Http\Request;
 
-class AuthorController extends Controller
+class BookCollectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return Author::select('id as value','name as label')->orderBy('name')->get();
+        //
     }
 
     /**
@@ -25,21 +25,16 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        $author = new Author;
-        $author->name = $request->name;
-        $author->gender = $request->gender;
-        $author->nationality = $request->nationality;
-        $author->save();
-        return $author;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\BookCollection  $bookCollection
      * @return \Illuminate\Http\Response
      */
-    public function show(Author $author)
+    public function show(BookCollection $bookCollection)
     {
         //
     }
@@ -48,10 +43,10 @@ class AuthorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\BookCollection  $bookCollection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(Request $request, BookCollection $bookCollection)
     {
         //
     }
@@ -59,10 +54,10 @@ class AuthorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\BookCollection  $bookCollection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $author)
+    public function destroy(BookCollection $bookCollection)
     {
         //
     }

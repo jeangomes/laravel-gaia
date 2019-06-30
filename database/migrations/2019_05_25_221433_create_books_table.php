@@ -16,22 +16,22 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('author_id');
-            $table->string('title',200);
+            $table->string('title', 200);
             $table->integer('page_number')->default(0);
-            $table->string('owner',30)->default('Jean');
-            $table->char('xerox',1)->default('N');
-            $table->char('is_read',1)->default('N');
-            $table->char('is_digital',1)->default('N');
+            $table->string('owner', 30)->default('Jean');
+            $table->boolean('xerox')->default(0);
+            $table->boolean('is_read')->default(0);
+            $table->boolean('ebook');
             $table->year('year_publish')->nullable();
-            $table->string('isbn',40)->default('-');
+            $table->string('isbn', 40)->default('-');
             $table->tinyInteger('volume')->default(0);
             $table->text('origin');
-            $table->string('edition',30)->default(1);
+            $table->string('edition', 30)->default(1);
             $table->longText('img_cover')->nullable();
-            $table->float('price')->nullable();
+            $table->decimal('price')->nullable();
             $table->date('purchase_date')->nullable();
             $table->text('obs')->nullable();
-            $table->enum('language',['Português','Inglês'])->default('Português');
+            $table->enum('language', ['Português', 'Inglês'])->default('Português');
             $table->timestamps();
         });
 
